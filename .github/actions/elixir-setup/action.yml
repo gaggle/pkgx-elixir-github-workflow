@@ -1,0 +1,6 @@
+name: Elixir setup
+description: Setup Elixir for a given path
+runs:
+  using: composite
+  steps:
+    - uses: pkgxdev/dev@v1

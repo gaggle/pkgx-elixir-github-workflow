@@ -1,0 +1,12 @@
+name: action-based
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/elixir-setup
+      - run: elixir -e "IO.puts(1 + 2)"

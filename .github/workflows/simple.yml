@@ -1,0 +1,12 @@
+name: simple
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pkgxdev/dev@v1
+      - run: elixir -e "IO.puts(1 + 2)"
