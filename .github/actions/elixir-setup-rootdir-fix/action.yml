@@ -5,4 +5,14 @@ runs:
   steps:
     - uses: pkgxdev/dev@v1
     - shell: bash
-      run: echo "ERL_BASE=$ERL_ROOTDIR" >> "$GITHUB_ENV"
+      run: |
+        unset ERL_ROOTDIR
+        ERL_BIN="$(command -v erl)"
+        ERL_BIN_REAL="$(readlink -f "$ERL_BIN")"
+        ERL_DIR="$(dirname "$(dirname "$ERL_BIN_REAL")")"
+        if [ -d "$ERL_DIR/lib/erlang" ]; then
+          ERL_BASE="$ERL_DIR/lib/erlang"
+        else
+          ERL_BASE="$ERL_DIR"
+        fi
+        echo "ERL_ROOTDIR=$ERL_BASE" >> "$GITHUB_ENV"
