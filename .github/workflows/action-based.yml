@@ -9,4 +9,5 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: ./.github/actions/elixir-setup
+      - run: cat $GITHUB_ENV
       - run: elixir -e "IO.puts(1 + 2)"
