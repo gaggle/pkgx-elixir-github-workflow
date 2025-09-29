@@ -10,4 +10,5 @@ jobs:
       - uses: actions/checkout@v5
       - uses: pkgxdev/dev@v1
       - run: cat $GITHUB_ENV
+      - run: env | grep ERL_
       - run: elixir -e "IO.puts(1 + 2)"
