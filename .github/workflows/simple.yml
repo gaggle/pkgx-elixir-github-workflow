@@ -7,8 +7,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: pkgxdev/dev@fix-erlang
-      - run: cat $GITHUB_ENV
-      - run: env | grep ERL_
       - run: elixir -e "IO.puts(1 + 2)"
+      - run: which mix
