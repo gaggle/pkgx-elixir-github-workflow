@@ -9,5 +9,26 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: pkgxdev/dev@fix-erlang
-      - run: elixir -e "IO.puts(1 + 2)"
       - run: which mix
+      - run: which elixir
+      - run: elixir --version
+      - run: mix --version
+      - run: mix help
+      - run: elixir -e "IO.puts(1 + 1)"
+      - run: elixir -e "IO.puts(1 + 2)"
+      - run: elixir -e "IO.puts(1 + 3)"
+      - run: elixir -e "IO.puts(1 + 4)"
+      - run: elixir -e "IO.puts(1 + 5)"
+      - run: elixir -e "IO.puts(1 + 6)"
+      - run: elixir -e "IO.puts(1 + 7)"
+      - run: elixir -e "IO.puts(1 + 8)"
+      - run: elixir -e "IO.puts(1 + 9)"
+      - run: elixir -e "IO.puts(2 + 1)"
+      - run: elixir -e "IO.puts(2 + 2)"
+      - run: elixir -e "IO.puts(2 + 3)"
+      - run: elixir -e "IO.puts(2 + 4)"
+      - run: elixir -e "IO.puts(2 + 5)"
+      - run: elixir -e "IO.puts(2 + 6)"
+      - run: elixir -e "IO.puts(2 + 7)"
+      - run: elixir -e "IO.puts(2 + 8)"
+      - run: elixir -e "IO.puts(2 + 9)"
